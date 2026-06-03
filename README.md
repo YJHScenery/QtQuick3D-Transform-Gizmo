@@ -6,9 +6,14 @@
 
 - **平移模式**：沿 X/Y/Z 轴或在 XY/XZ/YZ 平面上移动物体
 - **旋转模式**：绕 X/Y/Z 轴旋转物体
-- **缩放模式**：沿 X/Y/Z 轴缩放物体
+- **缩放模式**：暂不支持缩放，原因如下：
+  - 原作者未实现 
+  - 作者本人的项目 [Egret Physics](https://github.com/YJHScenery/Egret-Physics) 不需要（推销一波）
+  - 太忙了不想加😭
 
 ## 原作者与来源
+
+支持原作者，点击此处为原作者打赏：[Sponsor fferri](https://github.com/sponsors/fferri)
 
 本项目基于 GitHub 仓库 [fferri/qt3d-transform-gizmo](https://github.com/fferri/qt3d-transform-gizmo) 改写，从 Qt3D 移植到 Qt Quick 3D。
 
@@ -20,16 +25,15 @@
 
 ### 前置要求
 
-- Qt 6.x（需要 Qt Quick 3D 模块）
-- CMake 3.16+
-- C++17 编译器
+- **Qt 6.x**（需要 Qt Quick 3D 模块）
+- **CMake 3.16+**（本项目在 CMake4.2 下编译通过，设置最低的 CMake 版本为 3.30.1，但这并不是实际支持的最低版本，有需要可自行修改 CMakeList.txt 的相关配置）
+- **C++17 编译器**（为了适配 Qt6，实际上本项目几乎没有 C++ 代码，但并不保证 Qt6 能够在较低版本的 C++ 编译器中正常工作）
 
 ### 构建步骤
 
 ```shell
 cmake -B build -S .
-cmake --build build
-./build/qtquick3d-transform-gizmo
+cmake --build build --config Release
 ```
 
 > 注意：可能需要根据本地 Qt 安装路径修改 `CMakeLists.txt` 中的 `CMAKE_PREFIX_PATH`。
@@ -40,8 +44,8 @@ cmake --build build
 |------|------|
 | 左键点击方块 | 挂载 Gizmo 到该物体 |
 | 右键 | 卸载 Gizmo |
-| 左键拖拽 Gizmo 轴/面 | 平移 / 旋转 / 缩放物体 |
-| 点击 Gizmo 中心球 | 切换模式（平移 → 旋转 → 缩放） |
+| 左键拖拽 Gizmo 轴/面 | 平移 / 旋转 |
+| 点击 Gizmo 中心球 | 切换模式（平移 → 旋转） |
 | 左键拖拽空白处 | 旋转相机 |
 | 右键拖拽空白处 | 平移相机 |
 | 滚轮 | 缩放相机 |
@@ -54,6 +58,15 @@ cmake --build build
 
 ```
 Copyright (C) 2020 Federico Ferri
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+```
+
+```
+Copyright (C) 2026 Ye Jinghao
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
