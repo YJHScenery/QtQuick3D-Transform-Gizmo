@@ -4,6 +4,9 @@ Copyright (C) 2020  Federico Ferri
 
 Adapted to QtQuick3D.
 
+QtQuick3D Transform Gizmo
+Copyright (C) 2026 YJHScenery (Ye Jinghao)
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
