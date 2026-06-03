@@ -34,13 +34,6 @@ cmake --build build
 
 > 注意：可能需要根据本地 Qt 安装路径修改 `CMakeLists.txt` 中的 `CMAKE_PREFIX_PATH`。
 
-## 运行 (Python)
-
-```shell
-pip install pyside6
-python main.py
-```
-
 ## 操作说明
 
 | 操作 | 功能 |
