@@ -168,12 +168,13 @@ ApplicationWindow {
     View3D {
         id: gizmoView
         anchors.fill: parent
-        renderMode: View3D.Overlay
+        renderMode: View3D.Offscreen
         camera: gizmoCamera
+        z: 1
 
         environment: SceneEnvironment {
             clearColor: "#00000000"
-            backgroundMode: SceneEnvironment.Color
+            backgroundMode: SceneEnvironment.Transparent
         }
 
         PerspectiveCamera {
@@ -183,6 +184,12 @@ ApplicationWindow {
             clipNear: mainCamera.clipNear
             clipFar: mainCamera.clipFar
             fieldOfView: mainCamera.fieldOfView
+        }
+
+        DirectionalLight {
+            eulerRotation: Qt.vector3d(-45, 45, 0)
+            color: "white"
+            brightness: 1.2
         }
 
         TransformGizmo {
