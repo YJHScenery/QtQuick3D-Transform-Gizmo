@@ -407,9 +407,11 @@ Node {
                     visible: root.visible
                         && root.mode === TransformGizmo.Mode.Translation
                     pickable: true
+                    // position: Qt.vector3d(0,
+                    //     gizmoVisuals.beamLineLength
+                    //     + gizmoVisuals.beamTipTranslateLength / 2, 0)
                     position: Qt.vector3d(0,
-                        gizmoVisuals.beamLineLength
-                        + gizmoVisuals.beamTipTranslateLength / 2, 0)
+                        gizmoVisuals.beamLineLength, 0)
                     scale: Qt.vector3d(
                         0.01 * root.beamRadius * 4,
                         0.01 * gizmoVisuals.beamTipTranslateLength,
